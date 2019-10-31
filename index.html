@@ -22,7 +22,8 @@
 
     <div class="jumbotron jumbotron-fluid bg-dark text-center headerBox">
         <div class="container">
-            <h1 class="display-4 text-light"> <i class="fas fa-train"></i> Train Schedule <i class="fas fa-train"></i> </h1>
+            <h1 class="display-4 text-light"> <i class="fas fa-train"></i> Train Schedule <i class="fas fa-train"></i>
+            </h1>
             <p class="lead text-light"> Making sure you stay on time, all the time. </p>
         </div>
     </div>
@@ -33,7 +34,8 @@
 
     <div class="container formcontainer">
         <div class="card searchP">
-            <div class="card-header bg-dark text-light"> <i class="fas fa-calendar-alt"></i> Current Train Schedule</div>
+            <div class="card-header bg-dark text-light"> <i class="fas fa-calendar-alt"></i> Current Train Schedule
+            </div>
             <div class="employeeInput card-body">
                 <table class="table">
                     <thead>
@@ -43,7 +45,6 @@
                             <th scope="col">Frequency(min)</th>
                             <th scope="col">Next Arrival</th>
                             <th scope="col">Minutes Away </th>
-                            <th scope="col">Total Billed ($) </th>
 
                         </tr>
                     </thead>
@@ -65,46 +66,43 @@
     <div class="container formcontainer">
         <div class="card searchP">
             <div class="card-header bg-dark text-light"> <i class="fas fa-user-plus"></i> Add Trains</div>
-            <div class="employeeInput card-body">
+            <div class="trainInput card-body">
                 <form>
                     <div class="">
                         <div class="form-group searchT">
 
 
-                            <label for="inputSearch">Train Name</label>
-                            <input type="text" class="form-control" id="employeeName" placeholder="">
+                            <label for="inputTrain">Train Name</label>
+                            <input type="text" class="form-control" id="trainName" placeholder="">
                         </div>
                         <div class="">
                             <div class="form-group">
-                                <label for="inputRole">Destination</label>
-                                <input type="text" class="form-control" id="role" placeholder="">
+                                <label for="inputDestination">Destination</label>
+                                <input type="text" class="form-control" id="destination" placeholder="">
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputDate">First Train Time (HH:mm-military time)</label>
-                        <input type="time" name="time" class="form-control" id="startDate" placeholder="">
+                        <label for="inputTime">First Train Time (HH:MM) <a> Military time </a> </label>
+                        <input type="text" name="time" class="form-control" id="firstTrainTime" placeholder="">
                     </div>
                     <div class="form-group">
-                        <label for="inputRate">Frequency (min) </label>
-                        <input type="text" class="form-control" id="monthlyRate" placeholder="">
+                        <label for="inputFrequency">Frequency (min) </label>
+                        <input type="text" class="form-control" id="frequency" placeholder="">
                     </div>
 
-                    <button type="button" class="btn btn-dark submitButton" id="add-giph"> Submit</button>
+                    <button type="button" class="btn btn-dark submitButton" id="submit"> Submit</button>
                 </form>
             </div>
         </div>
     </div>
 
 
-    <div id="newResults"> </div>
-    </div>
-
 
     <!-- Link to Moment.js should go here -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-    <script src="app.js" type="text/javascript">
+    <script src="assets/javascript/app.js" type="text/javascript">
 
 
     // JS GOES HERE. 
