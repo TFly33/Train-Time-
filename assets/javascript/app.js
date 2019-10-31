@@ -68,9 +68,20 @@ database.ref().on("child_added", function (snapshot) {
     firstTrainTimeTD.text(sv.firstTrainTime);
     newRow.append(firstTrainTimeTD);
 
-    var firstTrainTimeFormat = "YYYY-MM-DD";
+
+    // Let's add some momentjs input. 
+
+    var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+    var firstTrainTimeConverted = moment(sv.firstTrainTime, "hh:mm").subtract(1, "years");
+    console.log(firstTrainTimeConverted);
+
+    var firstTrainTimeFormat = moment(firstTrainTimeTD).format("hh:mm");
     console.log(firstTrainTimeFormat);
 
+    var diffTime = moment().diff(moment(firstTrainTimeConverted), "minutes");
+    console.log("DIFFERENCE IN TIME: " + diffTime);
 
     $("tbody").append(newRow);
 
