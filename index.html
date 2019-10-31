@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Schedule</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        type="text/css">
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid bg-dark text-center headerBox">
+        <div class="container">
+            <h1 class="display-4 text-light"> <i class="fas fa-train"></i> Train Schedule <i class="fas fa-train"></i> </h1>
+            <p class="lead text-light"> Making sure you stay on time, all the time. </p>
+        </div>
+    </div>
+
+    <header>
+
+    </header>
+
+    <div class="container formcontainer">
+        <div class="card searchP">
+            <div class="card-header bg-dark text-light"> <i class="fas fa-calendar-alt"></i> Current Train Schedule</div>
+            <div class="employeeInput card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency(min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away </th>
+                            <th scope="col">Total Billed ($) </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="newRow">
+                            <th scope="row"></th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container formcontainer">
+        <div class="card searchP">
+            <div class="card-header bg-dark text-light"> <i class="fas fa-user-plus"></i> Add Trains</div>
+            <div class="employeeInput card-body">
+                <form>
+                    <div class="">
+                        <div class="form-group searchT">
+
+
+                            <label for="inputSearch">Train Name</label>
+                            <input type="text" class="form-control" id="employeeName" placeholder="">
+                        </div>
+                        <div class="">
+                            <div class="form-group">
+                                <label for="inputRole">Destination</label>
+                                <input type="text" class="form-control" id="role" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDate">First Train Time (HH:mm-military time)</label>
+                        <input type="time" name="time" class="form-control" id="startDate" placeholder="">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputRate">Frequency (min) </label>
+                        <input type="text" class="form-control" id="monthlyRate" placeholder="">
+                    </div>
+
+                    <button type="button" class="btn btn-dark submitButton" id="add-giph"> Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="newResults"> </div>
+    </div>
+
+
+    <!-- Link to Moment.js should go here -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+    <script src="app.js" type="text/javascript">
+
+
+    // JS GOES HERE. 
+
+    </script>
+
+
+</body>
+
+</html>
