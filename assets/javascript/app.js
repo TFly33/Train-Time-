@@ -50,6 +50,14 @@ database.ref().on("child_added", function (snapshot) {
     console.log(sv.firstTrainTime);
     console.log(sv.frequency);
 
+    // Let's add some momentjs input. 
+
+    var firstTime = sv.firstTrainTime;
+    var freq = sv.frequency;
+
+    console.log (firstTime);
+    console.log (freq);
+
     var newRow = $("<tr>");
 
     var trainNameTD = $("<td>");
@@ -64,48 +72,34 @@ database.ref().on("child_added", function (snapshot) {
     frequencyTD.text(sv.frequency);
     newRow.append(frequencyTD);
 
-    var firstTrainTimeTD = $("<td>");
-    firstTrainTimeTD.text(sv.firstTrainTime);
-    newRow.append(firstTrainTimeTD);
-
-
-    // Let's add some momentjs input. 
-
-    var firstTime = sv.FirstTrainTime;
-    var freq = sv.frequency;
-
-    console.log (firstTime);
-    console.log (freq);
-
-
     var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1,"years");
     console.log(firstTimeConverted);
-
-    // var currentTime = moment();
-    // console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
     var diffTime = moment().diff(moment(firstTimeConverted),"minutes");
     console.log("DIFFERENCE IN TIME" + diffTime);
 
-    var firstTrainTimeFormat = moment(sv.firstTrainTime, "HH:mm");
-    console.log(firstTrainTimeFormat);
-
     var tRemainder = diffTime % freq;
     console.log (tRemainder);
-
-    // Next Train 
 
     var tMinutesTillTrain = freq - tRemainder;
     console.log ("Minutes Until Train: " + tMinutesTillTrain);
 
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    console.log("Arrival Time " + moment(nextTrain).format("HH:mm"));
+    console.log("Next Train " + moment(nextTrain).format("HH:mm"));
 
-    // var diffTime = currentTrainTimeConverted.diff(moment(firstTrainTimeFormat), "minutes");
-    // console.log("DIFFERENCE IN TIME: " + diffTime);
+    var firstTrainTimeFormat = moment(sv.firstTrainTime, "HH:mm");
+    console.log(firstTrainTimeFormat);
 
+    var firstTrainTimeTD = $("<td>");
+    firstTrainTimeTD.text(sv.firstTrainTime);
+    newRow.append(firstTrainTimeTD);
 
+    var tMinutesTillTrainTD = $("<td>");
+    tMinutesTillTrainTD.text(tMinutesTillTrain);
+    newRow.append(tMinutesTillTrainTD);
+    console.log (tMinutesTillTrainTD);
 
+    
     $("tbody").append(newRow);
 
 });
