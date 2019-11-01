@@ -18,6 +18,8 @@ var destination; ""
 var firstTrainTime; ""
 var frequency; ""
 
+$(document).ready(function () {
+
 //   Initial variables
 
 $("#submit").on("click", function (event) {
@@ -113,3 +115,4 @@ $("#clear").on("click", function () {
 $("tbody").empty();
 });
 
+});
