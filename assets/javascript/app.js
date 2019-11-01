@@ -20,7 +20,7 @@ var frequency; ""
 
 //   Initial variables
 
-$("button").on("click", function (event) {
+$("#submit").on("click", function (event) {
     
     event.preventDefault();
 
@@ -85,22 +85,31 @@ database.ref().on("child_added", function (snapshot) {
     console.log ("Minutes Until Train: " + tMinutesTillTrain);
 
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-    console.log("Next Train " + moment(nextTrain).format("HH:mm"));
+    var convertedNextTrain = moment(nextTrain).format("LT");
+    // I realized I needed to add that ^LT to get the format back to AM/PM, per the instructions. 
+    // console.log("Next Train " + moment(nextTrain).format("HH:mm"));
 
     var firstTrainTimeFormat = moment(sv.firstTrainTime, "HH:mm");
     console.log(firstTrainTimeFormat);
 
-    var firstTrainTimeTD = $("<td>");
-    firstTrainTimeTD.text(sv.firstTrainTime);
-    newRow.append(firstTrainTimeTD);
+    var convertedNextTrainTD = $("<td>");
+    convertedNextTrainTD.text(convertedNextTrain);
+    newRow.append(convertedNextTrainTD);
 
     var tMinutesTillTrainTD = $("<td>");
     tMinutesTillTrainTD.text(tMinutesTillTrain);
+    // tMinutesTillTrainTD.addClass("text-center");
+    // ^Though about centering the new text, but it looks even weirder. 
     newRow.append(tMinutesTillTrainTD);
     console.log (tMinutesTillTrainTD);
 
     
     $("tbody").append(newRow);
 
+});
+
+// And let's add a simple little clear button so it's easy to read the page. 
+$("#clear").on("click", function () {
+$("tbody").empty();
 });
 

@@ -33,10 +33,11 @@
     </header>
 
     <div class="container formcontainer">
-        <div class="card searchP">
-            <div class="card-header bg-dark text-light"> <i class="fas fa-calendar-alt"></i> Current Train Schedule
+        
+            <div class="card-header bg-dark text-light border border-dark"> <i class="fas fa-calendar-alt"></i> Current
+                Train Schedule
             </div>
-            <div class="card-body">
+            <div class="card-body border border-dark">
                 <table class="table">
                     <thead>
                         <tr>
@@ -51,47 +52,44 @@
                     <tbody>
                         <tr class="newRow">
                             <th scope="row"></th>
-                          
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <br>
     <div class="container formcontainer">
-        <div class="card searchP">
-            <div class="card-header bg-dark text-light"> <i class="fas fa-user-plus"></i> Add Trains</div>
-            <div class="trainInput card-body">
-                <form>
+        <div class="card-header bg-dark text-light"> <i class="fas fa-user-plus"></i> Add Trains</div>
+        <div class="trainInput card-body background-color border border-dark">
+            <form>
+                <div class="">
+                    <div class="form-group searchT">
+                        <label for="inputTrain">Train Name</label>
+                        <input type="text" class="form-control" id="trainName" placeholder="">
+                    </div>
                     <div class="">
-                        <div class="form-group searchT">
-                            <label for="inputTrain">Train Name</label>
-                            <input type="text" class="form-control" id="trainName" placeholder="">
-                        </div>
-                        <div class="">
-                            <div class="form-group">
-                                <label for="inputDestination">Destination</label>
-                                <input type="text" class="form-control" id="destination" placeholder="">
-                            </div>
+                        <div class="form-group">
+                            <label for="inputDestination">Destination</label>
+                            <input type="text" class="form-control" id="destination" placeholder="">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputTime">First Train Time (HH:MM) <a> Military time </a> </label>
-                        <input type="text" name="time" class="form-control" id="firstTrainTime" placeholder="">
-                    </div>
-                    <div class="form-group">
-                        <label for="inputFrequency">Frequency (min) </label>
-                        <input type="text" class="form-control" id="frequency" placeholder="">
-                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTime">First Train Time (HH:MM) <a> Military time </a> </label>
+                    <input type="text" name="time" class="form-control" id="firstTrainTime" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="inputFrequency">Frequency (min) </label>
+                    <input type="text" class="form-control" id="frequency" placeholder="">
+                </div>
 
-                    <button type="button" class="btn btn-dark submitButton" id="submit"> Submit</button>
-                </form>
-            </div>
+                <button type="button" class="btn btn-dark submitButton" id="submit"> Submit</button>
+
+                <button type="button" class="btn btn-dark clearButton" id="clear"> Clear Results</button>
+            </form>
         </div>
+
     </div>
-
-
 
     <!-- Link to Moment.js should go here -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>

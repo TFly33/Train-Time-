@@ -1,14 +1,19 @@
 .jumbotron
 {
-    padding:20px;
+    padding:15px;
 }
 
-.card-body
+.trainInput
 {
-    margin-bottom:0px;
+   margin-bottom:10px;
+   font-weight: bold;
 }
 
-a
+.background-color{
+    background-color:lightgray;
+}
+
+.card-header
 {
-    font:italic
+    margin-top:10px;
 }
